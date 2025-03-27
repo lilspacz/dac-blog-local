@@ -1,1 +1,2 @@
-"strapi-test/node_modules"
+strapi-test/node_modules/*
+

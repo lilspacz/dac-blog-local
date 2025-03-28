@@ -1,11 +1,32 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import fetchApi from '../lib/strapi';
+import type BlogPost from '../interfaces/blogpost';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const blogposts = await fetchApi<BlogPost[]>({
+  endpoint: 'blog-posts', // the content type to fetch
+  wrappedByKey: 'data', // the key to unwrap the response
+});
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Strapi & Astro</title>
+  </head>
+
+  <body>
+    <main>
+      <ul>
+        {
+          blogposts.map((blogpost) => (
+            <li>
+              <a href={`/blog/${blogpost.slug}/`}>
+                {blogpost.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </body>
+</html>

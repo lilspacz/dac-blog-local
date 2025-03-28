@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #424242;
+    font-size: 14px;
+    font-family: "Trebuchet MS", sans-serif;
+    padding: 0 80px;
+}
+
+h1,
+h2 {
+    color: #121212;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 0 0 32px 0;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 400;
+    margin: 18px 0;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 16px;
+}
+
+a {
+    color: #5e5;
+}
+
+img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 32px;
+}
+
+.image-style-side {
+    float: right;
+    img {
+        max-width: 100%;
+    }
+}

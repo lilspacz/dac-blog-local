@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog-post",
     "pluralName": "blog-posts",
-    "displayName": "BlogPost"
+    "displayName": "BlogPost",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,12 +17,13 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
     },
     "body_ckeditor": {
       "type": "customField",
       "options": {
-        "preset": "defaultMarkdown"
+        "preset": "defaultHtml"
       },
       "required": true,
       "customField": "plugin::ckeditor5.CKEditor"
